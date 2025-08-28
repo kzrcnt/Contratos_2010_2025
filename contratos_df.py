@@ -6,7 +6,7 @@ pd.options.display.float_format = '{:.0f}'.format
 contratos = []
 
 for i in range(2012,2026):
-    contrato = pd.read_csv(r'E:\\Proyectos\\Exceles\\CompraNet\\Contratos_CompraNet_{}.csv'.format(i), encoding='ISO-8859-1',low_memory=False, on_bad_lines='skip')
+    contrato = pd.read_csv('Contratos_CompraNet_{}.csv'.format(i), encoding='ISO-8859-1',low_memory=False, on_bad_lines='skip')
     contratos.append(contrato)
 
 #Loop para modificación de columnas de dfs (2010-2017)
