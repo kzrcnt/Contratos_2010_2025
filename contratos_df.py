@@ -48,3 +48,12 @@ for df, año in zip(contratos, años):
 
 #Stack de todos los dfs en contratos
 contratos_stack = pd.concat(contratos, axis=0)
+
+#Funcion útil para aggs y cleanups
+def group_agg(df, col_group, col_agg, aggr, renaming):
+    group_df = (df.groupby(col_group).agg({col_agg:aggr})
+                .reset_index()
+                .rename(columns={col_agg:renaming})
+                .sort_values(by=renaming, ascending=False)
+               )
+    return group_df
